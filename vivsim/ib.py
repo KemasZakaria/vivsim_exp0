@@ -367,7 +367,7 @@ def multi_direct_forcing(
         delta_g = distribute_g_markers(delta_g_markers, kernels)
         
         # velocity correction
-        u = u.at[:, X1:X2, Y1:Y2].add(get_delta_u(delta_g, omega))
+        u = u.at[:, X1:X2, Y1:Y2].add(get_delta_u(delta_g))
         
         # accumulate the corresponding correction force to the markers and the fluid
         h_markers += - delta_g_markers
